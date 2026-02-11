@@ -45,3 +45,6 @@ next-env.d.ts
 
 # user data (sample excel files)
 /bank/
+
+# supabase temp
+supabase/.temp/
