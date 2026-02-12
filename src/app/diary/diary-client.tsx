@@ -7,9 +7,9 @@ import {
   updateDiaryFollowUp,
   getReceiptUrl,
   type DiaryEntry,
-  type DiaryJournalEntry,
   type PaymentMethod,
 } from '@/actions/diary-actions'
+import type { DiaryJournalEntry } from '@/lib/classify-diary-entry'
 
 const CATEGORY_COLORS: Record<string, string> = {
   // 지출 카테고리

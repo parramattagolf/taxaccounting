@@ -54,3 +54,5 @@ nul
 
 # supabase temp
 supabase/.temp/
+
+.vercel

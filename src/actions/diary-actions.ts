@@ -2,9 +2,7 @@
 
 import { createAdminClient } from '@/utils/supabase/admin'
 import { parseDiaryEntry } from '@/lib/parse-diary-entry'
-import { classifyDiaryEntry, validateJournalEntry, type DiaryJournalEntry, type JournalLine } from '@/lib/classify-diary-entry'
-
-export type { DiaryJournalEntry, JournalLine }
+import { classifyDiaryEntry, validateJournalEntry, type DiaryJournalEntry } from '@/lib/classify-diary-entry'
 
 export interface DiaryEntry {
   id: string
