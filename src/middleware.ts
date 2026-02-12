@@ -1,8 +1,9 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // Block common bot scans
   if (
     pathname.includes('/.env') ||
     pathname.includes('/api/config') ||
@@ -11,19 +12,9 @@ export async function middleware(request: NextRequest) {
     return new NextResponse(null, { status: 404 })
   }
 
-  if (pathname === '/auth/callback') {
-    return NextResponse.next()
-  }
-
-  try {
-    return await updateSession(request)
-  } catch {
-    return NextResponse.next({
-      request: {
-        headers: request.headers,
-      },
-    })
-  }
+  // For now, just pass through without Supabase session check
+  // (Auth will be added when login flow is implemented)
+  return NextResponse.next()
 }
 
 export const config = {
